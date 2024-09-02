@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Management</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 80px; /* Space between columns */
+        }
+        .nav-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .nav-column h2 {
+            margin-bottom: 15px;
+        }
+        .nav-column a {
+            display: block; /* Display links as block elements */
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 18px;
+            margin: 10px 0; /* Vertical spacing between links */
+        }
+        .nav-column a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to School Management System</h1>
+    <div class="container">
+        <div class="nav-column">
+            <h2>Student</h2>
+            <a href="/get_student">Get Student Info</a>
+            <a href="/add_student">Add New Student</a>
+        </div>
+        <div class="nav-column">
+            <h2>Teacher</h2>
+            <a href="/get_teacher">Get Teacher Info</a>
+            <a href="/add_teacher">Add New Teacher</a>
+        </div>
+        <div class="nav-column">
+            <h2>Course</h2>
+            <a href="/get_course">Get Course Info</a>
+            <a href="/add_course">Add New Course</a>
+        </div>
+    </div>
+</body>
+</html>

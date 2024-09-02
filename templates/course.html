@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 8px;
+            font-size: 14px;
+            width: 250px;
+        }
+        input[type="submit"] {
+            padding: 8px 15px;
+            font-size: 14px;
+        }
+        .output {
+            margin-top: 20px;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Enter Student ID</h1>
+    <form method="post" action="/get_student">
+        <input type="text" name="student_id" placeholder="Enter Student ID" required>
+        <input type="submit" value="Get Student Info">
+    </form>
+
+    <div class="output">
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        {% if student_result %}
+            <h2>Student Information</h2>
+            <p><strong>Name:</strong> {{ student_result.name }}</p>
+            <p><strong>Email:</strong> {{ student_result.email }}</p>
+            <p><strong>Class:</strong> {{ student_result.class_assigned }}</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>
